@@ -24,6 +24,5 @@ public class Tarefa {
 
     public String getStatus(){
         return concluida ? "Concluída" : "Pendente";
-
     }
 }
