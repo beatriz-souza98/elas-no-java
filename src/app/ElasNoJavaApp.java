@@ -23,7 +23,7 @@ public class ElasNoJavaApp{
     do {
         System.out.println("\nMENU PRINCIPAL");
         System.out.println("1 - Básico");
-        System.out.println("2 - Intermediario");
+        System.out.println("2 - Intermediário");
         System.out.println("3 - Avançado");
         System.out.println("4 - Sair");
         System.out.print("Escolha: ");
@@ -68,5 +68,4 @@ private static void menu(Scanner scanner, NivelEstudo nivel){
     }
         while (op != 3);
 }
-
 }
