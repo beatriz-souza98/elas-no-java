@@ -99,12 +99,21 @@ public class NivelEstudo {
         }
     }
 
-    public void setListaTarefas() {
+    public void listarTarefas() {
         for (int i = 0; i < listaTarefas.size(); i++) {
             Tarefa t = listaTarefas.get(i);
             System.out.println("--------------------------------");
-            System.out.println(i + " - " + t.getNome());
+            System.out.println((i + 1) + " - " + t.getNome());
             System.out.println("Status: " + t.getStatus());
+        }
+    }
+
+    public void mostrarTrilha() {
+
+        for (int i = 0; i < listaTarefas.size(); i++) {
+            Tarefa t = listaTarefas.get(i);
+            System.out.println("--------------------------------");
+            System.out.println((i + 1) + " - " + t.getNome());
         }
     }
 

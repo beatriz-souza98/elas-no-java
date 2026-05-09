@@ -10,7 +10,7 @@ public class ElasNoJavaApp{
         Scanner scanner = new Scanner(System.in);
 
         NivelEstudo basico = new NivelEstudo("básico");
-        NivelEstudo intermediario = new NivelEstudo("intermediario");
+        NivelEstudo intermediario = new NivelEstudo("intermediário");
         NivelEstudo avancado = new NivelEstudo("avançado");
 
     System.out.println("====================================");
@@ -43,29 +43,34 @@ public class ElasNoJavaApp{
         scanner.close();
 }
 
-private static void menu(Scanner scanner, NivelEstudo nivel){
+private static void menu(Scanner scanner, NivelEstudo nivel) {
 
-        int op;
+    int op;
 
-        do {
-            System.out.println("\n📚 " + nivel.getNome().toUpperCase());
-            System.out.println("1 - Ver trilha");
-            System.out.println("2 - Concluir tarefa");
-            System.out.println("3 - Voltar");
-            System.out.print("Escolha: ");
+    do {
+        System.out.println("\n📚 " + nivel.getNome().toUpperCase());
+        System.out.println("1 - Ver trilha");
+        System.out.println("2 - Concluir tarefa");
+        System.out.println("3 - Voltar");
+        System.out.print("Escolha: ");
 
-            op = scanner.nextInt();
+        op = scanner.nextInt();
 
-            switch (op){
-            case 1 -> nivel.setListaTarefas();
+        switch (op) {
+            case 1 -> nivel.mostrarTrilha();
             case 2 -> {
                 System.out.println("Escolha o tema: ");
-                nivel.setListaTarefas();
+                System.out.println("Ou digite 0 para voltar");
+                nivel.listarTarefas();
                 int index = scanner.nextInt();
                 nivel.concluirTarefa(index);
+
+                if (index != 0) {
+                    nivel.concluirTarefa(index);
+                }
             }
         }
     }
-        while (op != 3);
-}
+        while (op != 3) ;
+    }
 }
