@@ -18,10 +18,6 @@ public class Tarefa {
         return nome;
     }
 
-    public boolean isConcluida( ){
-        return concluida;
-    }
-
     public String getStatus(){
         return concluida ? "Concluida" : "Pendente";
     }
