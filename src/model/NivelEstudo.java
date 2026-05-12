@@ -1,17 +1,14 @@
 package model;
 
-import service.MotivacaoService;
 import java.util.ArrayList;
 import java.util.List;
 
 public class NivelEstudo {
 
     private String nomeNivel;
-    private List<Tarefa> listaTarefas = new ArrayList<Tarefa>();
-    private MotivacaoService motivacao = new MotivacaoService();
+    private List<Tarefa> listaTarefas = new ArrayList<>();
     public NivelEstudo(String nomeNivel) {
         this.nomeNivel = nomeNivel;
-        this.listaTarefas = listaTarefas;
         carregarTrilha();
     }
 
@@ -102,7 +99,7 @@ public class NivelEstudo {
     public void listarTarefas() {
         for (int i = 0; i < listaTarefas.size(); i++) {
             Tarefa t = listaTarefas.get(i);
-            System.out.println("--------------------------------");
+            System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
             System.out.println((i + 1) + " - " + t.getNome());
             System.out.println("Status: " + t.getStatus());
         }
@@ -112,18 +109,18 @@ public class NivelEstudo {
 
         for (int i = 0; i < listaTarefas.size(); i++) {
             Tarefa t = listaTarefas.get(i);
-            System.out.println("--------------------------------");
+            System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
             System.out.println((i + 1) + " - " + t.getNome());
         }
     }
 
-    public void concluirTarefa(int index) {
+    public boolean concluirTarefa(int index) {
         if (index >= 0 && index < listaTarefas.size()) {
             listaTarefas.get(index).concluir();
-            System.out.println("\n✔ Tarefa concluída com sucesso!");
-            System.out.println(motivacao.proximaFrase());
-        } else {
-            System.out.println("Índice inválido!");
+            return true;
+        }
+        else {
+            return false;
         }
     }
 

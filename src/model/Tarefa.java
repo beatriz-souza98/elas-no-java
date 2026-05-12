@@ -19,6 +19,6 @@ public class Tarefa {
     }
 
     public String getStatus(){
-        return concluida ? "Concluida" : "Pendente";
+        return concluida ? "Concluída" : "Pendente";
     }
 }
